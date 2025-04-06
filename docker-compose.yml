@@ -1,8 +1,21 @@
-version : '3'
-services :
-  zomatomart :
-    container_name : zomatomart
-    duild : ./zomatomart
-    ports :
+version: '3'
+services:
+  zomatomart:
+    container_name: zomatomart
+    duild: ./zomatomart
+    ports:
         - '1111:80'
+    deploy: 
+      replicas: 6
+      update_config:
+        parallelism: 2
+      restart_policy:
+        condition: on-failure
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: overlay
+    
         

@@ -1,0 +1,8 @@
+version : '3'
+services :
+  zomatomart :
+    container_name : zomatomart
+    duild : ./zomatomart
+    ports :
+        - '1111:80'
+        

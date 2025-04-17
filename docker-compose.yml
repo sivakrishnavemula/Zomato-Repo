@@ -2,7 +2,7 @@ version: '3'
 services:
   zomatomart:
     container_name: myzomato
-    build: ./zomatomart
+    image: siva-zomato1
     ports:
         - '1111:80'
     deploy: 

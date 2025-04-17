@@ -5,15 +5,14 @@ services:
     duild: ./zomatomart
     ports:
         - '1111:80'
+    volumes: 
+        - zomato_volume: /usr/share/nginx/html
     deploy: 
       replicas: 6
-      update_config:
-        parallelism: 2
-      restart_policy:
-        condition: on-failure
     networks:
       - app-network
-
+volumes: 
+    zomato_volume:
 networks:
   app-network:
     driver: overlay
